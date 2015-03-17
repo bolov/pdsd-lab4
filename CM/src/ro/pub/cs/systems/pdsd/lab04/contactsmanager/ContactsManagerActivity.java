@@ -1,30 +1,20 @@
 package ro.pub.cs.systems.pdsd.lab04.contactsmanager;
 
 import android.app.Activity;
-import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 
 
 public class ContactsManagerActivity extends Activity {
 	
-	class MyListner implements android.view.View.OnClickListener {
-
-		@Override
-		public void onClick(View v) {
-			// TODO Auto-generated method stub
-			View f2 = (View) findViewById(R.id.f2);
-			f2.setVisibility(1 - f2.getVisibility());
-			
-		}
-		
-	}
-
+	
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,12 +26,10 @@ public class ContactsManagerActivity extends Activity {
         ft.add(R.id.f1, new Frag1());
         ft.commit();
         
-        Button toogle_btn = (Button) findViewById(R.id.button_toggle);
-        toogle_btn.setOnClickListener(new MyListner());
         
          
     }
-
+   
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
